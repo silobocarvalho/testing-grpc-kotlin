@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.zup";
+option java_outer_classname = "Carsgrpc";
+option objc_class_prefix = "HLW";
+
+package br.com.zup;
+
+service CarsGrpcService {
+  rpc addCar (CarRequest) returns (CarResponse) {}
+}
+
+message CarRequest {
+  string model = 1;
+  string license = 2;
+}
+
+message CarResponse {
+  int32 carId = 1;
+}
